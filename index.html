@@ -3,170 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apna Swad Foods</title>
+
+<title>Apna Swad Foods | Premium Snacks</title>
 
 <style>
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#fff8f0;
+  background:#fffaf2;
   color:#222;
 }
 
 header{
-  background:#8b1e1e;
+  background:#7b1e16;
   color:white;
-  padding:15px 6%;
+  padding:16px 6%;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:100;
 }
 
 .logo{
-  font-size:23px;
-  font-weight:bold;
+  font-size:24px;
+  font-weight:800;
 }
 
 .cart{
-  background:white;
-  color:#8b1e1e;
-  padding:9px 14px;
-  border-radius:20px;
+  background:#f5c542;
+  color:#222;
+  padding:10px 16px;
+  border-radius:25px;
   font-weight:bold;
 }
 
 .hero{
+  padding:55px 6%;
   text-align:center;
-  padding:55px 20px;
-  background:linear-gradient(135deg,#fff0d9,#ffe0b2);
+  background:linear-gradient(135deg,#fff1c9,#fffaf2);
 }
 
 .hero h1{
-  font-size:38px;
-  color:#8b1e1e;
+  font-size:42px;
+  color:#7b1e16;
   margin-bottom:12px;
 }
 
 .hero p{
   font-size:18px;
-  margin-bottom:22px;
+  color:#555;
+  margin-bottom:25px;
 }
 
-.btn{
+.shop-btn{
   display:inline-block;
-  background:#8b1e1e;
+  background:#7b1e16;
   color:white;
-  padding:13px 25px;
-  border-radius:25px;
   text-decoration:none;
+  padding:14px 28px;
+  border-radius:30px;
   font-weight:bold;
 }
 
 .products{
-  padding:40px 6%;
+  padding:45px 6%;
 }
 
 .products h2{
   text-align:center;
-  color:#8b1e1e;
+  color:#7b1e16;
+  font-size:30px;
   margin-bottom:30px;
-  font-size:28px;
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
 .card{
   background:white;
-  border-radius:15px;
+  border-radius:20px;
+  padding:15px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
   overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,.12);
-  text-align:center;
-  padding-bottom:20px;
 }
 
-.product-img{
-  height:200px;
+.card img{
   width:100%;
-  object-fit:cover;
+  height:280px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:15px;
 }
 
 .card h3{
-  margin:15px 0 8px;
-  color:#8b1e1e;
+  font-size:21px;
+  margin:15px 5px 8px;
+  color:#7b1e16;
 }
 
 .card p{
   color:#666;
-  margin-bottom:10px;
+  margin:0 5px 12px;
 }
 
 .price{
   font-size:20px;
   font-weight:bold;
-  margin-bottom:14px;
+  margin:0 5px 15px;
 }
 
-.order{
-  background:#8b1e1e;
-  color:white;
+.buy{
+  width:100%;
   border:0;
-  padding:10px 20px;
-  border-radius:20px;
+  padding:13px;
+  background:#7b1e16;
+  color:white;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
   cursor:pointer;
 }
 
 .about{
   padding:45px 8%;
-  background:#fff0d9;
   text-align:center;
+  background:#f8e7bd;
 }
 
 .about h2{
-  color:#8b1e1e;
-  margin-bottom:15px;
+  color:#7b1e16;
+  margin-bottom:12px;
 }
 
-.contact{
-  padding:40px 20px;
-  text-align:center;
-}
-
-.contact h2{
-  color:#8b1e1e;
-  margin-bottom:15px;
+.about p{
+  line-height:1.7;
+  color:#555;
 }
 
 footer{
-  background:#8b1e1e;
+  background:#7b1e16;
   color:white;
   text-align:center;
-  padding:20px;
-  margin-top:20px;
+  padding:25px;
+  margin-top:0;
 }
 
-@media(max-width:600px){
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
   .hero h1{
-    font-size:30px;
+    font-size:32px;
   }
 
-  header{
-    padding:13px 4%;
-  }
-
-  .logo{
-    font-size:19px;
+  .card img{
+    height:300px;
   }
 }
 </style>
@@ -175,354 +177,71 @@ footer{
 <body>
 
 <header>
-  <div class="logo">🍴 Apna Swad Foods</div>
-  <div class="cart">🛒 Cart (0)</div>
+  <div class="logo">APNA SWAD FOODS</div>
+  <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
 </header>
 
 <section class="hero">
-  <h1>Apna Swad Foods</h1>
-  <p>Delicious food made with love ❤️</p>
-  <a href="#products" class="btn">Shop Now</a>
+  <h1>Har Bite Mein Apna Swad ❤️</h1>
+  <p>Premium & tasty snacks made for every mood.</p>
+  <a href="#products" class="shop-btn">Shop Now</a>
 </section>
 
 <section class="products" id="products">
-  <h2>Our Products</h2>
 
-  <div class="grid">
+<h2>Our Products</h2>
 
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
-      alt="Samosa">
-      <h3>Fresh Samosa</h3>
-      <p>Crispy & delicious</p>
-      <div class="price">₹20</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=80"
-      alt="Indian Snacks">
-      <h3>Special Snacks</h3>
-      <p>Perfect evening snack</p>
-      <div class="price">₹99</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
+<!-- PRODUCT 1 -->
+<div class="card">
+  <img src="tandoori-peanut.jpg" alt="Tandoori Peanut">
+  <h3>Tandoori Peanut</h3>
+  <p>Crunchy, spicy and full of delicious tandoori flavour.</p>
+  <div class="price">₹99</div>
+  <button class="buy" onclick="addCart()">Add to Cart</button>
+</div>
 
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
-      alt="Food">
-      <h3>Special Food Pack</h3>
-      <p>Tasty & hygienic</p>
-      <div class="price">₹149</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
+<!-- PRODUCT 2 -->
+<div class="card">
+  <img src="masala-chana.jpg" alt="Masala Chana">
+  <h3>Masala Chana</h3>
+  <p>Crispy roasted chana with a tasty masala twist.</p>
+  <div class="price">₹99</div>
+  <button class="buy" onclick="addCart()">Add to Cart</button>
+</div>
 
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
-      alt="Food Bowl">
-      <h3>Healthy Food</h3>
-      <p>Fresh & tasty</p>
-      <div class="price">₹199</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
+<!-- PRODUCT 3 -->
+<div class="card">
+  <img src="masala-makhana.jpg" alt="Masala Makhana">
+  <h3>Masala Makhana</h3>
+  <p>Light, crunchy makhana with delicious masala flavour.</p>
+  <div class="price">₹129</div>
+  <button class="buy" onclick="addCart()">Add to Cart</button>
+</div>
 
-  </div>
+</div>
 </section>
 
 <section class="about">
-  <h2>About Apna Swad Foods</h2>
+  <h2>Why Choose Apna Swad?</h2>
   <p>
-    We provide tasty, fresh and quality food products
-    made specially for our customers.
+    Delicious snacks, great taste and premium quality.
+    Perfect for evening snacks, parties and everyday cravings.
   </p>
 </section>
 
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>📞 +91 98765 43210</p>
-  <p>📍 Lucknow, Uttar Pradesh</p>
-</section>
-
 <footer>
-  © 2026 Apna Swad Foods | All Rights Reserved
+  <p>© 2026 Apna Swad Foods</p>
+  <p>Made with ❤️ for snack lovers</p>
 </footer>
 
 <script>
-let cartCount = 0;
+let count = 0;
 
 function addCart(){
-  cartCount++;
-  document.querySelector(".cart").innerText =
-    "🛒 Cart (" + cartCount + ")";
-  alert("Product added to cart!");
-}
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apna Swad Foods</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#fff8f0;
-  color:#222;
-}
-
-header{
-  background:#8b1e1e;
-  color:white;
-  padding:15px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  font-size:23px;
-  font-weight:bold;
-}
-
-.cart{
-  background:white;
-  color:#8b1e1e;
-  padding:9px 14px;
-  border-radius:20px;
-  font-weight:bold;
-}
-
-.hero{
-  text-align:center;
-  padding:55px 20px;
-  background:linear-gradient(135deg,#fff0d9,#ffe0b2);
-}
-
-.hero h1{
-  font-size:38px;
-  color:#8b1e1e;
-  margin-bottom:12px;
-}
-
-.hero p{
-  font-size:18px;
-  margin-bottom:22px;
-}
-
-.btn{
-  display:inline-block;
-  background:#8b1e1e;
-  color:white;
-  padding:13px 25px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.products{
-  padding:40px 6%;
-}
-
-.products h2{
-  text-align:center;
-  color:#8b1e1e;
-  margin-bottom:30px;
-  font-size:28px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:22px;
-}
-
-.card{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 4px 15px rgba(0,0,0,.12);
-  text-align:center;
-  padding-bottom:20px;
-}
-
-.product-img{
-  height:200px;
-  width:100%;
-  object-fit:cover;
-}
-
-.card h3{
-  margin:15px 0 8px;
-  color:#8b1e1e;
-}
-
-.card p{
-  color:#666;
-  margin-bottom:10px;
-}
-
-.price{
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
-
-.order{
-  background:#8b1e1e;
-  color:white;
-  border:0;
-  padding:10px 20px;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-.about{
-  padding:45px 8%;
-  background:#fff0d9;
-  text-align:center;
-}
-
-.about h2{
-  color:#8b1e1e;
-  margin-bottom:15px;
-}
-
-.contact{
-  padding:40px 20px;
-  text-align:center;
-}
-
-.contact h2{
-  color:#8b1e1e;
-  margin-bottom:15px;
-}
-
-footer{
-  background:#8b1e1e;
-  color:white;
-  text-align:center;
-  padding:20px;
-  margin-top:20px;
-}
-
-@media(max-width:600px){
-  .hero h1{
-    font-size:30px;
-  }
-
-  header{
-    padding:13px 4%;
-  }
-
-  .logo{
-    font-size:19px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <div class="logo">🍴 Apna Swad Foods</div>
-  <div class="cart">🛒 Cart (0)</div>
-</header>
-
-<section class="hero">
-  <h1>Apna Swad Foods</h1>
-  <p>Delicious food made with love ❤️</p>
-  <a href="#products" class="btn">Shop Now</a>
-</section>
-
-<section class="products" id="products">
-  <h2>Our Products</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80"
-      alt="Samosa">
-      <h3>Fresh Samosa</h3>
-      <p>Crispy & delicious</p>
-      <div class="price">₹20</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=800&q=80"
-      alt="Indian Snacks">
-      <h3>Special Snacks</h3>
-      <p>Perfect evening snack</p>
-      <div class="price">₹99</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=800&q=80"
-      alt="Food">
-      <h3>Special Food Pack</h3>
-      <p>Tasty & hygienic</p>
-      <div class="price">₹149</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
-
-    <div class="card">
-      <img class="product-img"
-      src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80"
-      alt="Food Bowl">
-      <h3>Healthy Food</h3>
-      <p>Fresh & tasty</p>
-      <div class="price">₹199</div>
-      <button class="order" onclick="addCart()">Add to Cart</button>
-    </div>
-
-  </div>
-</section>
-
-<section class="about">
-  <h2>About Apna Swad Foods</h2>
-  <p>
-    We provide tasty, fresh and quality food products
-    made specially for our customers.
-  </p>
-</section>
-
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p>📞 +91 98765 43210</p>
-  <p>📍 Lucknow, Uttar Pradesh</p>
-</section>
-
-<footer>
-  © 2026 Apna Swad Foods | All Rights Reserved
-</footer>
-
-<script>
-let cartCount = 0;
-
-function addCart(){
-  cartCount++;
-  document.querySelector(".cart").innerText =
-    "🛒 Cart (" + cartCount + ")";
+  count++;
+  document.getElementById("cartCount").innerText = count;
   alert("Product added to cart!");
 }
 </script>
